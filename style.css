@@ -1,0 +1,63 @@
+.allc{
+    margin:30px 5%;
+}
+#vout{
+    margin-top: 110px;
+    width: 100%;
+}
+image{
+    width: 80%;
+}
+#demo1{
+    text-align: center;
+}
+
+#turns, #frequency, #voltage, #displacement{
+    float: right;
+    
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.slidecontainer {
+    width: 100%;
+  }
+  
+  .slider {
+      margin-left: 8%;
+    -webkit-appearance: none;
+    width: 70%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+
+ 

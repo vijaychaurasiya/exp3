@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+</head>
+
+<body>
+    <div class="allc">
+        <div class="row">
+            <div class="col-lg-4 col-sm-4">
+                <div id="instrument">
+                    <h4 id="title"> Motion of the core</h4>
+                    <p>Assumptions:</p>
+                    <p>
+                        I<sub>P</sub>= V<sub>in</sub>/R <br>
+                        Where R= 10K&#8486 <br>
+                        Inner Radius Of the Coil =R<sub>i</sub> <br>
+                        Outer Radius Of the Coil = R<sub>o</sub> <br>
+                        Ratio of Outer radius to the inner radius:<br>R<sub>o</sub> /R<sub>i</sub>= 2 <br>
+                        Length of the primary winding(b) = 20mm <br>
+                        Length of Secondary Winding (m) = 10mm<br><br>
+                        V<sub>Out</sub> = fI<sub>p</sub>(N<sub>p</sub>N<sub>s</sub>
+                        &mu;<sub>0</sub>bx/3mlog(R<sub>o</sub>/R<sub>i</sub>))(1-x<sup>2</sup>/2b<sup>2</sup>)
+                    </p>
+                    <h4>Graph</h4>
+                </div>
+                <div class="container">
+                    <canvas id="myChart" width="80" height="45"></canvas>
+            </div>
+            </div>
+
+            <div class="col-lg-8 col-sm-8">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+
+                        <img src="LVDT123.PNG">
+
+
+
+                        <div class="slidecontainer">
+                            <input type="range" min="-250" max="250" value="0" class="slider" id="myRange">
+                            <p id="demo1"><span id="demo"></span></p>
+                        </div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="Lvdt2part.PNG">
+                                </td>
+                                <td>
+                                    <input id="vout" type="text" onchange="slide()"><br>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <form id="myForm">
+
+
+                            <label for="turns">No. Of Turns:</label>
+                            <input id="turns" type="number" placeholder="Input" min="0"><br>
+
+                            <label for="frequency">Supply Freq.(Hz):</label>
+                            <input id="frequency" type="number" placeholder="Input" min="0"><br>
+
+                            <label for="voltage">Supply Voltage(V<sub>rms</sub>):</label>
+                            <input id="voltage" type="number" placeholder="Input" min="0"><br>
+
+                            <label for="displacement">Displacement:</label>
+                            <input id="displacement" type="number" value="0"><br>
+
+                            <div class="button">
+                                <button type="button" class="btn btn-dark" id="resett" onclick="reset()">Reset</button>
+                                <button type="button" class="btn btn-danger" id="graph" onclick="plot()">Graph</button>
+                                <button type="button" class="btn btn-success" id="find" value="button"
+                                    onclick="response()">V<sub>out</sub></button>
+                            </div>
+                        </form>
+                        <h5><u>Selected Values</u></h5>
+                   <div id="div2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="chart1.js"></script>
+</body>
+
+</html>
