@@ -24,6 +24,9 @@ const suppdis =document.getElementById("displacement").value;
 data12.push(suppdis);
 
 var roundoffR2=(16.96*suppfre*suppv*(1-((suppdis*suppdis)/800)));
+    if(roundoffR2<0){
+    roundoffR2= -(roundoffR2)
+}
 const f=roundoffR2.toFixed(4);
 data11.push(f);
 document.getElementById("vout").value=f;
